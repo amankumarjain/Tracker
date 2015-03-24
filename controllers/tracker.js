@@ -127,8 +127,8 @@ exports.index = function (req, res) {
 };
 
 exports.get = function (req, res) {
-       Tracker.find({ "id":  req.params.id }, function () {
-            res.setHeader('content-type','application/json');
+       Tracker.find({ "id":  req.params.id }, function (err, rcd) {
+            if (err) console.log(err);
             res.send(arguments+req.params.id);
        });
 };
@@ -144,10 +144,13 @@ exports.create = function (req, res) {
 };
 
 exports.update = function (req, res) {
-       Tracker.update({ "id":  req.params.id }, req.body , {} , function (err, count) {
-		   if (err) console.log(err);
-           res.setHeader('content-type','application/json');
-           res.send({ "updated" : count });
+	console.log(req.params.id)
+	console.log(req.body)
+       Tracker.update({ "id":  req.params.id }, req.body , {} , function () {
+		console.log(arguments)
+		 //  if (err) console.log(err);
+           res.json(arguments)
+           //res.send({ "updated" : count });
 	   });
 };
 

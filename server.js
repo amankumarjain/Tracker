@@ -64,7 +64,10 @@ app.get('/api/tracker/', tracker.index);
 app.get('/api/tracker/create',controllers.create)
 app.post('/api/tracker/create',tracker.create)
 
+app.get('/api/tracker/update',controllers.update)
+
 app.get('/api/tracker/:id', tracker.get);
+
 app.post('/api/tracker/:id/update', tracker.update);
 app.get('/api/tracker/:id/delete', tracker.delete);
 
