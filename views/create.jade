@@ -1,0 +1,31 @@
+extends layout
+
+block content
+  h1= title
+  p  Create a Tracker
+    br
+    form.create_form(method='post')
+      div(style='width: 50%')
+        label Tracker Id
+        input#ident(type='text', name='id', style='float: right' required)
+      br
+      div(style='width: 50%')
+        label Tracker Status
+        input#status(type='number', name='status', min='0', max='1', style='float: right' required)
+      br
+      div(style='width: 50%')
+        label Tracker Name
+        input#name(type='text', name='name', style='float: right' required)
+      br
+      div(style='width: 50%')
+        label Tracker Device
+        input#device(type='text', name='device', style='float: right' required)
+      br
+      div(style='width: 50%')
+        label Tracker Initial Location
+        input#pac-input(type='text', name='location', style='float: right' required)
+      br
+      div(style='width: 50%')     
+        button#submit(type='submit', style='float: right') SUBMIT
+block script 
+  script(src='/assets/js/style.js')
