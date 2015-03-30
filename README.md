@@ -9,6 +9,5 @@ $git clone https://github.com/amankumarjain/Tracker.git
 
 TO START YOUR APPLICATION, GO TO PROJECT FOLDER AND TYPE: 
 
-$nodejs server.py     	  
-#server.py is main configration file of this application.
+$nodejs server.js     	  
 
